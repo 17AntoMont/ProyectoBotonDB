@@ -35,15 +35,15 @@ public class BotomForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
         btnVerRegistros = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistrarActionPerformed(evt);
             }
         });
 
@@ -60,17 +60,17 @@ public class BotomForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addComponent(jButton1)
+                .addComponent(btnRegistrar)
                 .addGap(79, 79, 79)
                 .addComponent(btnVerRegistros)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(117, 117, 117)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnRegistrar)
                     .addComponent(btnVerRegistros))
                 .addContainerGap(160, Short.MAX_VALUE))
         );
@@ -78,7 +78,7 @@ public class BotomForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
         String nombre = "Boton principal";
         
@@ -98,7 +98,7 @@ public class BotomForm extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this, "Error al guardar el registro: " + ex.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnVerRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerRegistrosActionPerformed
         RegistrosFrame ventana = new RegistrosFrame();
@@ -131,7 +131,7 @@ public class BotomForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnVerRegistros;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
