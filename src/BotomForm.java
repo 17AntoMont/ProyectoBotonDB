@@ -8,11 +8,12 @@
  * @author anton
  */
 
+import dao.ConexionOracle;
 import dao.BotonLogDAO;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.sql.Connection;
-import BotomForm.ConexionOracle;
+import ui.RegistrosFrame;
 
 public class BotomForm extends javax.swing.JFrame {
     
@@ -34,14 +35,22 @@ public class BotomForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
+        btnVerRegistros = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnVerRegistros.setText("Ver registros");
+        btnVerRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerRegistrosActionPerformed(evt);
             }
         });
 
@@ -50,22 +59,26 @@ public class BotomForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jButton1)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(btnRegistrar)
+                .addGap(79, 79, 79)
+                .addComponent(btnVerRegistros)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jButton1)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGap(117, 117, 117)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar)
+                    .addComponent(btnVerRegistros))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
         String nombre = "Boton principal";
         
@@ -85,7 +98,12 @@ public class BotomForm extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this, "Error al guardar el registro: " + ex.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnVerRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerRegistrosActionPerformed
+        RegistrosFrame ventana = new RegistrosFrame();
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btnVerRegistrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,6 +131,7 @@ public class BotomForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnVerRegistros;
     // End of variables declaration//GEN-END:variables
 }

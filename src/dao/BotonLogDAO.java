@@ -12,6 +12,12 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class BotonLogDAO {
     
@@ -26,5 +32,35 @@ public class BotonLogDAO {
         
         System.out.println("Registro insertado correctamente.");
         }  
+    }
+    
+    public List<BotonLog> obtenerRegistros(){
+        List<BotonLog> lista = new ArrayList<>();
+        
+        String sql = "SELECT ID, FECHA, MENSAJE FROM BOTON_LOG ORDER BY ID DESC";
+        
+        try (Connection conn = ConexionOracle.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()){
+            
+            while (rs.next()){
+                int id = rs.getInt("ID");
+                Timestamp fecha = rs.getTimestamp("FECHA");
+                String mensaje = rs.getString("MENSAJE");
+                lista.add(new BotonLog(id, fecha, mensaje));
+            }
+            
+        } catch (SQLException e){
+            System.out.println("Error obteniendo registros: " + e.getMessage());
+        }
+        
+        return lista;
+    }
+    
+    public void limpiarRegistros(Connection conn) throws SQLException {
+        String sql = "DELETE FROM BOTON_LOG";
+        try (PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.executeUpdate();
+        }
     }
 }
