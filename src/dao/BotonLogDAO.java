@@ -56,4 +56,11 @@ public class BotonLogDAO {
         
         return lista;
     }
+    
+    public void limpiarRegistros(Connection conn) throws SQLException {
+        String sql = "DELETE FROM BOTON_LOG";
+        try (PreparedStatement ps = conn.prepareStatement(sql)){
+            ps.executeUpdate();
+        }
+    }
 }
