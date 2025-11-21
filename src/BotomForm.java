@@ -8,11 +8,12 @@
  * @author anton
  */
 
+import dao.ConexionOracle;
 import dao.BotonLogDAO;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.sql.Connection;
-import BotomForm.ConexionOracle;
+import ui.RegistrosFrame;
 
 public class BotomForm extends javax.swing.JFrame {
     
@@ -35,6 +36,7 @@ public class BotomForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        btnVerRegistros = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,21 +47,32 @@ public class BotomForm extends javax.swing.JFrame {
             }
         });
 
+        btnVerRegistros.setText("Ver registros");
+        btnVerRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerRegistrosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
+                .addGap(71, 71, 71)
                 .addComponent(jButton1)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addComponent(btnVerRegistros)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jButton1)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGap(117, 117, 117)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btnVerRegistros))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,6 +100,11 @@ public class BotomForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnVerRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerRegistrosActionPerformed
+        RegistrosFrame ventana = new RegistrosFrame();
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btnVerRegistrosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -113,6 +131,7 @@ public class BotomForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVerRegistros;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
